@@ -1,0 +1,185 @@
+/* Based on template from csslayoutgenerator.com */
+
+body {
+  font: 16px/18px 'Lora', serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+img{
+  width:100%;
+}
+h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 3rem;
+}
+
+h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+.dropdown-toggle::after {
+  display: none
+}
+
+.stop-scrolling {
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Header
+-----------------------------------------------------------------------------*/
+
+#header {
+  position: fixed;
+  width: 100%;
+}
+#header #desktopHeader{
+  display: none;
+}
+#header #mobileHeader {
+position: relative;
+}
+
+#header #mobileHeader .headerIcons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3%;
+  background: #EEEEEE;
+}
+
+#header #mobileHeader .logo {
+  width: 60px;
+}
+
+#header #mobileHeader .cross {
+  width: 30px;
+  cursor: pointer;
+}
+
+#header #mobileHeader .hamburgerBtn {
+  width: 30px;
+  cursor: pointer;
+}
+
+#header #mobileHeader .hamburgerMenu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 9vh;
+  height: 100vh;
+  width: 100vw;
+  background: #EEEEEE;
+}
+
+#header #mobileHeader .hamburgerMenu #hamburgerDropdown {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  height: 100vh;
+  width: 100vw;
+  padding-top: 9vh;
+}
+
+#header #mobileHeader .hamburgerMenu #hamburgerDropdown a {
+  text-align: center;
+  font-size:1.2rem;
+  text-decoration: none;
+  color: #000c3e;
+  font-weight: 700;
+}
+
+#header #mobileHeader .hamburgerMenu #hamburgerDropdown hr {
+  width:70%;
+  margin-top:10%;
+  margin-bottom:10%;
+}
+
+#header #mobileHeader .hamburgerMenu,
+.cross {
+  display: none;
+}
+
+/* Middle
+-----------------------------------------------------------------------------*/
+/* Home */
+#homePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('../assets/images/blueBG.jpg')
+}
+#homePage img{
+  width:90%;
+}
+#homePage h1 {
+  padding-top: 25vh;
+  color: #EEEEEE;
+}
+
+#homePage h2 {
+  color: #EEEEEE;
+  padding-top: 6vh;
+  text-shadow: 0px 0px 5px turquoise;
+}
+
+#homePage .soMeIcons {
+  display: flex;
+  justify-content: center;
+  margin:10vh 0;
+}
+
+#homePage .soMeIcons a {
+  margin: 0 7%;
+
+}
+#homePage .soMeIcons a .soMeIcon{
+  width: 40px;
+  transition: transform .5s;
+}
+
+#homePage .soMeIcons a .soMeIcon:hover {
+  transform: scale(1.5);
+  
+}
+#homePage .arrow {
+  width: 50px;
+  transition: transform .5s;
+}
+
+#homePage .arrow:hover {
+  transform: scale(1.5);
+}
+
+/* aboutPage */
+
+#aboutPage
+/* Footer
+-----------------------------------------------------------------------------*/
+
+#foooterrrrr{
+background:black;
+}
+
+/* ---------------------------- Different devices ---------------------------- */
+
+@media only screen and (min-width: 768px){
+  #header #mobileHeader {
+    display:none;
+  }
+  #header #desktopHeader {
+    position: relative;
+  }
+}
