@@ -1,5 +1,3 @@
-/* Based on template from csslayoutgenerator.com */
-
 body {
   font: 16px/18px 'Lora', serif;
 }
@@ -49,48 +47,48 @@ h3 {
   display: none;
 }
 #header #mobileHeader {
-position: relative;
+  width:100%;
+  z-index: 9999999;
 }
 
 #header #mobileHeader .headerIcons {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 3%;
+  padding: 5px;
   background: #EEEEEE;
 }
 
 #header #mobileHeader .logo {
-  width: 60px;
+  width: 72px;
+}
+#header #mobileHeader .logo img {
+  width: auto;
 }
 
 #header #mobileHeader .cross {
-  width: 30px;
+  width: 35px;
   cursor: pointer;
 }
 
 #header #mobileHeader .hamburgerBtn {
-  width: 30px;
+  width: 35px;
   cursor: pointer;
 }
 
 #header #mobileHeader .hamburgerMenu {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin-top: 9vh;
-  height: 100vh;
-  width: 100vw;
   background: #EEEEEE;
+  height: 100vh;
 }
 
 #header #mobileHeader .hamburgerMenu #hamburgerDropdown {
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  height: 100vh;
-  width: 100vw;
-  padding-top: 9vh;
+  justify-content: space-between;
+  height: 70vh;
+  overflow: scroll;
+  align-items: center;
+  padding: 5vh 0;
 }
 
 #header #mobileHeader .hamburgerMenu #hamburgerDropdown a {
@@ -99,12 +97,13 @@ position: relative;
   text-decoration: none;
   color: #000c3e;
   font-weight: 700;
+  width: 70%;
 }
 
 #header #mobileHeader .hamburgerMenu #hamburgerDropdown hr {
   width:70%;
-  margin-top:10%;
-  margin-bottom:10%;
+  margin-top:35px;
+  margin-bottom:35px;
 }
 
 #header #mobileHeader .hamburgerMenu,
@@ -120,9 +119,6 @@ position: relative;
   flex-direction: column;
   align-items: center;
   background-image: url('../assets/images/blueBG.jpg')
-}
-#homePage img{
-  width:90%;
 }
 #homePage h1 {
   padding-top: 25vh;
@@ -142,11 +138,10 @@ position: relative;
 }
 
 #homePage .soMeIcons a {
-  margin: 0 7%;
-
+  margin: 0 6%;
 }
 #homePage .soMeIcons a .soMeIcon{
-  width: 40px;
+  width:50px;
   transition: transform .5s;
 }
 
@@ -155,7 +150,7 @@ position: relative;
   
 }
 #homePage .arrow {
-  width: 50px;
+  width: auto;
   transition: transform .5s;
 }
 
