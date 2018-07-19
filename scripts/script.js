@@ -1,63 +1,106 @@
 $(document).ready(function () {
 
-  // animation for the desktopHeader
-  var lastScrollTop = 0;
-  var desktopHeader = $('#header #desktopHeader');
-  $(window).scroll(function () {
-    var scrollTop = $(this).scrollTop();
-    if (scrollTop > lastScrollTop) {
-      if (Modernizr.mq('(min-width: 768px)')) {
-        desktopHeader.fadeOut();
-      }
-    } else {
-      if (Modernizr.mq('(min-width: 768px)')) {
-        desktopHeader.fadeIn();
-      }
-    }
-    lastScrollTop = scrollTop;
-  });
-
-  //-------------------- Dropdown menu --------------------
+  // ------------------------sticky navigation------------------------
 
   // Define the needed variables
-  var cross = $('#mobileHeader .cross');
-  var hamburgerBtn = $('#mobileHeader .hamburgerBtn');
-  var hamburgerMenu = $('#mobileHeader .hamburgerMenu');
+  var homeHeight = $('#home').outerHeight() - 25;
+  var mobileHeader = $('#bodyHomePage #header #mobileHeader');
+  var headerIcons = $('#header #mobileHeader .headerIcons');
+  var hamburgerBg = $('#header #mobileHeader .hamburgerBg');
+
+  $(window).scroll(function () {
+    if ($(window).scrollTop() > homeHeight) {
+      mobileHeader.css('position', 'fixed');
+      hamburgerBg.css('opacity', '0.98');
+      headerIcons.css('background', '#252525')
+    } else {
+      mobileHeader.css('position', 'absolute');
+      hamburgerBg.css('opacity', '0');
+      headerIcons.css('background', '')
+    }
+  })
+  // ------------------------ if iOS, another way for the navigation ------------------------
+
+  // Define the needed variables
+  var cross = $('#header #mobileHeader .headerIcons .cross');
+  var hamburgerBtn = $('#header #mobileHeader .headerIcons .hamburgerBtn');
+  var hamburgerMenu = $('#header #mobileHeader .hamburgerMenu');
   var html = $('html');
+  var logo = $('#header #mobileHeader .headerIcons .logo');
+  var links = $('#header #mobileHeader .hamburgerMenu #hamburgerDropdown a');
   var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-  console.log(iOS)
+
+
   if (iOS) {
-    $('.hamburgerBtn').click(function () {
-      $('.hamburgerMenu').css({
+    hamburgerBtn.click(function () {
+      hamburgerMenu.css({
         display: 'block'
       });
-      $('.cross').css({
+      cross.css({
         display: 'block'
       });
-      $('.hamburgerBtn').css({
+      hamburgerBtn.css({
         display: 'none'
+      });
+      html.addClass('stop-scrolling');
+      hamburgerBg.css('opacity', '0.98');
+      $('body, html').bind('touchmove touchstart', function (e) {
+        e.preventDefault()
       });
     })
-    $('.cross').click(function () {
-      $('.hamburgerMenu').css({
+    cross.click(function () {
+      hamburgerBg.css('opacity', '0');
+      hamburgerMenu.css({
         display: 'none'
       });
-      $('.cross').css({
+      cross.css({
         display: 'none'
       });
-      $('.hamburgerBtn').css({
+      hamburgerBtn.css({
         display: 'block'
       });
+      html.removeClass('stop-scrolling');
+      $('body, html').unbind('touchmove touchstart');
+    })
+    links.on('click', function () {
+      hamburgerBg.css('opacity', '0');
+      hamburgerMenu.css({
+        display: 'none'
+      });
+      cross.css({
+        display: 'none'
+      });
+      hamburgerBtn.css({
+        display: 'block'
+      });
+      html.removeClass('stop-scrolling');
+      $('body, html').unbind('touchmove touchstart');
+    })
+    logo.on('click', function () {
+      hamburgerBg.css('opacity', '0');
+      hamburgerMenu.css({
+        display: 'none'
+      });
+      cross.css({
+        display: 'none'
+      });
+      hamburgerBtn.css({
+        display: 'block'
+      });
+      html.removeClass('stop-scrolling');
+      $('body, html').unbind('touchmove touchstart');
     })
   } else {
+    // / ------------------------if not iOS------------------------
+
     // when click on hamburger menu, show links and cross, hide hamburger image
     hamburgerBtn.on('click', showLinks);
 
     // when click on cross, hide links and cross, show hamburger image
 
     cross.on('click', hideLinks);
-    $('#header #mobileHeader .hamburgerMenu #hamburgerDropdown a').on('click', hideLinks);
-    $('#header #mobileHeader .headerIcons .logo').on('click', hideLinks)
+    links.on('click', hideLinks);
+    logo.on('click', hideLinks)
 
     // showLink function
 
@@ -66,6 +109,7 @@ $(document).ready(function () {
       hamburgerBtn.hide(500);
       cross.delay(350).show(500);
       html.addClass('stop-scrolling');
+      hamburgerBg.css('opacity', '0.98');
       $('body, html').bind('touchmove touchstart', function (e) {
         e.preventDefault()
       });
@@ -77,7 +121,18 @@ $(document).ready(function () {
       hamburgerBtn.delay(350).show(500);
       cross.hide(500);
       html.removeClass('stop-scrolling');
+      hamburgerBg.css('opacity', '0');
       $('body, html').unbind('touchmove touchstart');
     };
   };
+
+  // --------------------------- Smooth scrolling  ---------------------------
+    $(document).on('click', 'a[href^="#"]', function (event) {
+      // remove default
+      event.preventDefault();
+
+      $('html, body').animate({
+          scrollTop: $($.attr(this, 'href')).offset().top - 20
+      }, 800);
+  });
 });
