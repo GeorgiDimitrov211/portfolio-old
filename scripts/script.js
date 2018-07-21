@@ -3,7 +3,7 @@ $(document).ready(function () {
   // ------------------------sticky navigation------------------------
 
   // Define the needed variables
-  var homeHeight = $('#home').outerHeight() - 25;
+  var homeHeight = $('#home').outerHeight() - 1;
   var mobileHeader = $('#bodyHomePage #header #mobileHeader');
   var headerIcons = $('#header #mobileHeader .headerIcons');
   var hamburgerBg = $('#header #mobileHeader .hamburgerBg');
@@ -132,7 +132,8 @@ $(document).ready(function () {
       event.preventDefault();
 
       $('html, body').animate({
-          scrollTop: $($.attr(this, 'href')).offset().top - 20
+          scrollTop: $($.attr(this, 'href')).offset().top
       }, 800);
   });
+
 });
