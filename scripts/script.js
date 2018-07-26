@@ -3,20 +3,23 @@ $(document).ready(function () {
   // ------------------------sticky navigation------------------------
 
   // Define the needed variables
-  var homeHeight = $('#home').outerHeight() - 1;
+  var homeHeight = $('#home').outerHeight() - 10;
   var mobileHeader = $('#bodyHomePage #header #mobileHeader');
   var headerIcons = $('#header #mobileHeader .headerIcons');
   var hamburgerBg = $('#header #mobileHeader .hamburgerBg');
+  var desktopHeader = $('#header #desktopHeader');
 
   $(window).scroll(function () {
     if ($(window).scrollTop() > homeHeight) {
       mobileHeader.css('position', 'fixed');
       hamburgerBg.css('opacity', '0.98');
-      headerIcons.css('background', '#252525')
+      headerIcons.css('background', '#353535');
+      desktopHeader.addClass('fixedHeader');
     } else {
       mobileHeader.css('position', 'absolute');
       hamburgerBg.css('opacity', '0');
-      headerIcons.css('background', '')
+      headerIcons.css('background', '');
+      desktopHeader.removeClass('fixedHeader');
     }
   })
   // ------------------------ if iOS, another way for the navigation ------------------------
@@ -135,5 +138,15 @@ $(document).ready(function () {
           scrollTop: $($.attr(this, 'href')).offset().top
       }, 800);
   });
-
+  window.sr = ScrollReveal({ 
+    reset: true, 
+    duration: 1000, 
+    origin: 'top',
+    distance: 0,
+    scale: 0.8,
+    easing: 'ease-in-out',
+    viewFactor: 0.25,
+   });
+  sr.reveal('.sectionFlexItem');
+  sr.reveal('#contact form');
 });
