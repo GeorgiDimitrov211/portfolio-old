@@ -84,110 +84,31 @@
             transform: scale3d(1, 1, 1);
   }
 }
-@-webkit-keyframes bounce {
+@-webkit-keyframes trackingIn {
   0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    letter-spacing: -0.5em;
     opacity: 0;
   }
-  38% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-    opacity: 1;
-  }
-  55% {
-    -webkit-transform: scale(0.7);
-            transform: scale(0.7);
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
-  }
-  72% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-  }
-  81% {
-    -webkit-transform: scale(0.84);
-            transform: scale(0.84);
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
-  }
-  89% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-  }
-  95% {
-    -webkit-transform: scale(0.95);
-            transform: scale(0.95);
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+  40% {
+    opacity: 0.6;
   }
   100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    opacity: 1;
   }
 }
-@keyframes bounce {
+@keyframes trackingIn {
   0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    letter-spacing: -0.5em;
     opacity: 0;
   }
-  38% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-    opacity: 1;
-  }
-  55% {
-    -webkit-transform: scale(0.7);
-            transform: scale(0.7);
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
-  }
-  72% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-  }
-  81% {
-    -webkit-transform: scale(0.84);
-            transform: scale(0.84);
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
-  }
-  89% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-  }
-  95% {
-    -webkit-transform: scale(0.95);
-            transform: scale(0.95);
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+  40% {
+    opacity: 0.6;
   }
   100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    opacity: 1;
   }
 }
+
 @-webkit-keyframes scale-in {
   0% {
     -webkit-transform: scaleX(0);
@@ -496,15 +417,15 @@ textarea:focus {
   margin-top: 45vh;
   margin-bottom: 3vh;
   color: #EEEEEE;
-  -webkit-animation: bounce 2.5s both;
-          animation: bounce 2.5s both;
+	-webkit-animation: trackingIn 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: trackingIn 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
 
 #home h2 {
   color: #0d86b6;
   text-transform: capitalize;
-  -webkit-animation: bounce 2.5s both, infColour 2s ease-in-out infinite;
-          animation: bounce 2.5s both, infColour 2s ease-in-out infinite;
+  -webkit-animation: trackingIn 1.5s both, infColour 3s ease-in-out infinite;
+          animation: trackingIn 1.5s both, infColour 3s ease-in-out infinite;
   
 }
 
@@ -903,12 +824,12 @@ textarea:focus {
   color: #252525;
 }
 
-#contact form h3 {
+#contact form h2 {
   margin: 0% 4% 0 4%;
   padding-bottom: 3.5%;
 }
 
-#contact form h3::after {
+#contact form h2::after {
   display: block;
   content: " ";
   width: 80px;
@@ -918,7 +839,7 @@ textarea:focus {
   background: #4db8e3;
 }
 
-#contact form>*:not(h3) {
+#contact form>*:not(h2) {
   margin: 6% 4%;
   padding: 2% 0;
   border: 0;
@@ -1234,10 +1155,10 @@ footer .footerBlueElements {
   #contact form button {
     width: 50%;
   }
-  #contact form h3 {
+  #contact form h2 {
     font-size: 1.6rem;
   }
-  #contact form>*:not(h3) {
+  #contact form>*:not(h2) {
     margin: 3% 4%;
     padding: 1.5% 0;
   }
@@ -1340,7 +1261,7 @@ footer .footerBlueElements {
     width: 40%;
     cursor: pointer;
   }
-  #contact form>*:not(h3) {
+  #contact form>*:not(h2) {
     margin: 3% 12%;
     padding: 1% 0;
   }
@@ -1390,7 +1311,7 @@ footer .footerBlueElements {
             justify-content: space-between;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    padding: 10px 30px;
+    padding: 20px 30px;
     -webkit-transition: background-color .5s ease-in-out;
     transition: background-color .5s ease-in-out;
   }
@@ -1616,7 +1537,7 @@ footer .footerBlueElements {
     background: #0d86b6;
     color: #EEEEEE;
   }
-  #contact form>*:not(h3) {
+  #contact form>*:not(h2) {
     margin: 2% 15%;
     padding: 1% 0;
   }
@@ -1652,7 +1573,7 @@ footer .footerBlueElements {
   #bodyAboutPage #header #desktopHeader {
     position: fixed;
     background: #353535;
-    padding: 5px 30px;
+    padding: 20px 30px;
   }
   #bodyAboutPage #aboutPage>.headingPicture>h2 {
     padding: 2.5% 0;
@@ -1699,7 +1620,7 @@ footer .footerBlueElements {
     font-size: 1.1rem;
   }
   #header #desktopHeader {
-    padding: 5px 9%;
+    padding: 20px 9%;
   }
   #header #desktopHeader.fixedHeader {
     padding: 5px 9%;
@@ -1708,6 +1629,9 @@ footer .footerBlueElements {
   #home {
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(25, 25, 25, 0.8)), to(rgba(25, 25, 25, 0.8))), url('https://res.cloudinary.com/dndvaqitq/image/upload/c_scale,h_1200/v1530206370/computerBg.jpg');
     background-image: linear-gradient(rgba(25, 25, 25, 0.8), rgba(25, 25, 25, 0.8)), url('https://res.cloudinary.com/dndvaqitq/image/upload/c_scale,h_1200/v1530206370/computerBg.jpg');
+  }
+  #home .arrow {
+    margin-bottom:3vh;
   }
   /* about */
   #about {
@@ -1875,13 +1799,13 @@ footer .footerBlueElements {
   #contact {
     padding: 0 0 3% 0;
   }
-  #contact form h3 {
+  #contact form h2 {
     padding: 6% 0 1% 0;
   }
   #contact form .btn {
     width: 30%;
   }
-  #contact form>*:not(h3) {
+  #contact form>*:not(h2) {
     margin: 1.5% 25%;
     padding: 0.6% 0;
   }
@@ -1915,7 +1839,7 @@ footer .footerBlueElements {
   #bodyAboutPage #header #desktopHeader {
     position: fixed;
     background: #353535;
-    padding: 5px 9%;
+    padding: 20px 9%;
   }
   #bodyAboutPage #aboutPage>.headingPicture>h2 {
     padding: 2% 0;
@@ -1996,7 +1920,7 @@ footer .footerBlueElements {
     line-height: 1.4rem;
   }
   /* contact */
-  #contact form h3 {
+  #contact form h2 {
     padding: 5% 0 1% 0;
   }
   /* ------------------ filledFormPage ------------------ */
@@ -2027,7 +1951,7 @@ footer .footerBlueElements {
 
 @media only screen and (min-width: 1500px) {
   #header #desktopHeader {
-    padding: 5px 14%;
+    padding: 20px 14%;
   }
   #header #desktopHeader.fixedHeader {
     padding: 5px 14%;
@@ -2116,13 +2040,13 @@ footer .footerBlueElements {
   #contact {
     padding: 0 0 2% 0;
   }
-  #contact form h3 {
+  #contact form h2 {
     padding: 5% 0 1% 0;
   }
   #contact form .btn {
     width: 20%;
   }
-  #contact form>*:not(h3) {
+  #contact form>*:not(h2) {
     margin: 1% 30%;
     padding: 0.4% 0;
   }
@@ -2142,7 +2066,7 @@ footer .footerBlueElements {
   #bodyAboutPage #header #desktopHeader {
     position: fixed;
     background: #353535;
-    padding: 5px 15%;
+    padding: 20px 15%;
   }
   #bodyAboutPage #aboutPage>.headingPicture>h2 {
     padding: 1.5% 0;
