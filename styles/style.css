@@ -1573,7 +1573,7 @@ footer .footerBlueElements {
   #bodyAboutPage #header #desktopHeader {
     position: fixed;
     background: #353535;
-    padding: 20px 30px;
+    padding: 5px 30px;
   }
   #bodyAboutPage #aboutPage>.headingPicture>h2 {
     padding: 2.5% 0;
@@ -1839,7 +1839,7 @@ footer .footerBlueElements {
   #bodyAboutPage #header #desktopHeader {
     position: fixed;
     background: #353535;
-    padding: 20px 9%;
+    padding: 5px 9%;
   }
   #bodyAboutPage #aboutPage>.headingPicture>h2 {
     padding: 2% 0;
@@ -2066,7 +2066,7 @@ footer .footerBlueElements {
   #bodyAboutPage #header #desktopHeader {
     position: fixed;
     background: #353535;
-    padding: 20px 15%;
+    padding: 5px 15%;
   }
   #bodyAboutPage #aboutPage>.headingPicture>h2 {
     padding: 1.5% 0;
