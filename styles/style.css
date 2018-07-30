@@ -1750,6 +1750,10 @@ footer .footerBlueElements {
         -ms-flex-pack: start;
             justify-content: flex-start;
   }
+
+  #skills .sectionsFlex .sectionFlexItem:last-of-type .buttons .btn {
+    display: none;
+  }
   #skills .sectionsFlex .sectionFlexItem .sectionFlexItemImages>p {
     margin: 3% 0;
   }

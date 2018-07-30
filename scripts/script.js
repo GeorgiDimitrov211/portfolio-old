@@ -145,7 +145,7 @@ $(document).ready(function () {
     distance: 0,
     scale: 0.8,
     easing: 'ease-in-out',
-    viewFactor: 0.25,
+    viewFactor: 0.15,
    });
   sr.reveal('.sectionFlexItem');
   sr.reveal('#contact form');
