@@ -565,6 +565,9 @@ textarea:focus {
   margin: 10% 0;
 }
 
+#skills .sectionsFlex .sectionFlexItem .content .text {
+  margin-bottom:5%;
+}
 #skills .sectionsFlex .sectionFlexItem:last-of-type {
   padding-top: 10%;
 }
@@ -614,20 +617,6 @@ textarea:focus {
   margin: 0 2.5%;
 }
 
-#skills .sectionsFlex .sectionFlexItem .sectionFlexItemImages>p {
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
-  -ms-flex-item-align: center;
-      align-self: center;
-  text-align: center;
-  color: black;
-  background-image: repeating-linear-gradient( -45deg, #CCCCCC, #CCCCCC 10px, #EEEEEE 10px, #EEEEEE 20px);
-  border-radius: 5px;
-  background-size: 28px 28px;
-  -webkit-animation: loading .5s linear infinite;
-          animation: loading .5s linear infinite;
-  margin: 2.5% 5% 0 5%;
-}
 
 #skills .sectionsFlex .sectionFlexItem .content .buttons {
   margin: 10% -2% 0 -2%;
@@ -1761,7 +1750,7 @@ footer .footerBlueElements {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     margin: -1.5%;
-    padding: 0 10%;
+    padding: 0 4%;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -1901,7 +1890,9 @@ footer .footerBlueElements {
     margin: 5% 0;
   }
   /* projects */
-
+  #projects .sectionsFlex {
+    padding: 0 10%;
+  }
   #projects .sectionsFlex .sectionFlexItem .sectionContent .text {
     padding: 10% 0;
   }
@@ -1966,7 +1957,7 @@ footer .footerBlueElements {
     padding-bottom: 12%;
   }
   #about h2 {
-    padding: 4% 0 2% 0;
+    padding: 4% 0 4% 0;
     text-align: center;
   }
   #about .sectionsFlex {
